@@ -2,6 +2,8 @@ FOODFORFAVORS SPEC SHEET
 
 Bare-Bones App:
 1.	Person posts a favor needed (ie. Homework help, fix my iphone screen, mow my lawn, etc) in exchange for food
+	       Layout of screen is in a "newsfeed"-esque layout with the newest favor at the top
+	       If user wants to post a request, presses a button on the top to submit a request
 2.	Other user can “take on” the favor
 3.	If original poster of favor accepts, phone numbers are exchanged and a text screen is opened
 
