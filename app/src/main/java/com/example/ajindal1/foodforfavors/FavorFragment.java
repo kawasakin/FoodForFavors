@@ -87,12 +87,12 @@ public class FavorFragment extends Fragment {
         final ImageView foodImage = (ImageView)mView.findViewById(R.id.foodImage);
         EditText editText = (EditText)mView.findViewById(R.id.requestField);
         final ImageDeck deck = new ImageDeck();
-        foodImage.setImageDrawable(getResources().getDrawable(deck.getCurrent()));
+        foodImage.setImageDrawable(getResources().getDrawable(deck.getCurrent().getImageID()));
 
         lb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                foodImage.setImageDrawable(getResources().getDrawable(deck.moveLeft()));
+                foodImage.setImageDrawable(getResources().getDrawable(deck.moveLeft().getImageID()));
 
             }
         });
@@ -100,7 +100,7 @@ public class FavorFragment extends Fragment {
         rb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                foodImage.setImageDrawable(getResources().getDrawable(deck.moveRight()));
+                foodImage.setImageDrawable(getResources().getDrawable(deck.moveRight().getImageID()));
             }
         });
 

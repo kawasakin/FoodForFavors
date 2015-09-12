@@ -9,27 +9,28 @@ import com.example.ajindal1.foodforfavors.R;
  */
 public class ImageDeck
 {
-    private int[] imageIDs = {R.drawable.burrito_menu,
-            R.drawable.beer_menu,
-            R.drawable.chicken_menu};;
+    private FoodItem[] menu = { new FoodItem(R.drawable.burrito_menu,"burrito",8.99),
+                                new FoodItem(R.drawable.beer_menu,"a few Beers",5.00),
+                                new FoodItem(R.drawable.chicken_menu,"some chicken wings",12.99)};
+
     private int currentImage;
 
     public ImageDeck() {
         int currentImage = 0;
     }
 
-    public int moveRight() {
-        currentImage = (currentImage + 1)%imageIDs.length;
-        return imageIDs[currentImage];
+    public FoodItem moveRight() {
+        currentImage = (currentImage + 1)%menu.length;
+        return menu[currentImage];
     }
 
-    public int moveLeft() {
-        currentImage = (currentImage - 1 + imageIDs.length)%imageIDs.length;
-        return imageIDs[currentImage];
+    public FoodItem moveLeft() {
+        currentImage = (currentImage - 1 + menu.length)%menu.length;
+        return menu[currentImage];
     }
 
-    public int getCurrent() {
-        return imageIDs[currentImage];
+    public FoodItem getCurrent() {
+        return menu[currentImage];
     }
 
 }
