@@ -2,6 +2,7 @@ package com.example.ajindal1.foodforfavors;
 
 import java.util.Locale;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -18,7 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class HomeActivity extends AppCompatActivity implements ActionBar.TabListener {
+public class HomeActivity extends AppCompatActivity implements ActionBar.TabListener, FavorFragment.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -113,4 +114,8 @@ public class HomeActivity extends AppCompatActivity implements ActionBar.TabList
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 }
