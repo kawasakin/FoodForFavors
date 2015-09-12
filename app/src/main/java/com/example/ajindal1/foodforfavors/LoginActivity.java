@@ -8,6 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+/*
+import com.parse.Parse;
+import com.parse.ParseObject; */
+
+
 public class LoginActivity extends AppCompatActivity {
 
     protected TextView mSignUpTextView;
@@ -15,6 +20,9 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_login);
 
         mSignUpTextView = (TextView)findViewById(R.id.signUpView);
