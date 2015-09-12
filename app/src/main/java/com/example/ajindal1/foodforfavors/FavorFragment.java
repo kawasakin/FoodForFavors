@@ -1,14 +1,19 @@
 package com.example.ajindal1.foodforfavors;
 
 import android.app.Activity;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ViewFlipper;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import imagedeck.ImageDeck;
 
 
 /**
@@ -24,6 +29,12 @@ public class FavorFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private View mView;
+
+    protected ImageButton lb,rb;
+    protected Button request;
+    protected Image foodImage;
+    protected EditText editText;
 
 
     // TODO: Rename and change types of parameters
@@ -66,8 +77,36 @@ public class FavorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        mView =  inflater.inflate(R.layout.fragment_favor, container, false);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favor, container, false);
+        ImageButton lb = (ImageButton)mView.findViewById(R.id.lButton);
+        ImageButton rb = (ImageButton)mView.findViewById(R.id.rButton);
+        Button request = (Button)mView.findViewById(R.id.request);
+        final ImageView foodImage = (ImageView)mView.findViewById(R.id.foodImage);
+        EditText editText = (EditText)mView.findViewById(R.id.requestField);
+        final ImageDeck deck = new ImageDeck();
+        foodImage.setImageDrawable(getResources().getDrawable(deck.getCurrent()));
+
+        lb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                foodImage.setImageDrawable(getResources().getDrawable(deck.moveLeft()));
+
+            }
+        });
+
+        rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                foodImage.setImageDrawable(getResources().getDrawable(deck.moveRight()));
+            }
+        });
+
+
+
+        return mView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

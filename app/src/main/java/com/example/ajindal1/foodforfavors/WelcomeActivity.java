@@ -11,8 +11,6 @@ import android.widget.TextView;
 
 import com.parse.ParseUser;
 
-import org.w3c.dom.Text;
-
 public class WelcomeActivity extends AppCompatActivity {
     public static final String TAG = WelcomeActivity.class.getSimpleName();
     protected Button logout,mContinueButton;

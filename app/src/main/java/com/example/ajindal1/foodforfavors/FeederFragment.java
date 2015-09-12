@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.ajindal1.foodforfavors.R;
+
 /**
  * Created by ajindal1 on 9/12/15.
  */
