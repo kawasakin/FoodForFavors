@@ -7,18 +7,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.parse.ParseUser;
 
+import org.w3c.dom.Text;
+
 public class WelcomeActivity extends AppCompatActivity {
     public static final String TAG = WelcomeActivity.class.getSimpleName();
-    protected Button logout;
+    protected Button logout,mContinueButton;
+    protected TextView welcomeMessage;
     ParseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        welcomeMessage = (TextView)findViewById(R.id.welcomeView);
 
         logout = (Button)findViewById(R.id.logoutButton);
         logout.setOnClickListener(new View.OnClickListener() {
@@ -30,12 +36,22 @@ public class WelcomeActivity extends AppCompatActivity {
             }
         });
 
+        mContinueButton = (Button)findViewById(R.id.continueButton);
+        mContinueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(WelcomeActivity.this, HomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
         currentUser = ParseUser.getCurrentUser();
         if(currentUser == null) {
             goToLoginMenu();
         }
         else {
             Log.i(TAG,currentUser.getUsername());
+            welcomeMessage.setText("Hello " + currentUser.getUsername() + "! Welcome to Food For Favors!");
         }
 
     }
