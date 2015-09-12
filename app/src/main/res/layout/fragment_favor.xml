@@ -5,6 +5,14 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <ImageView
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:id="@+id/foodImage"
+        android:src="@drawable/burrito_menu"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,6 +22,30 @@
         android:hint="Describe the favor you need"
         android:height="200dp"
         android:gravity="top"
-        android:background="#91c3ff" />
+        android:background="#acd2ff" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=">>"
+        android:id="@+id/button"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/foodImage"
+        android:layout_toEndOf="@+id/foodImage" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_alignBottom="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/foodImage"
+        android:layout_toStartOf="@+id/foodImage"
+        android:text="&lt;&lt;" />
 
 </RelativeLayout>
