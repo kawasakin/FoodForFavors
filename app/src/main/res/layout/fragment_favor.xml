@@ -68,4 +68,12 @@
         android:background="#009478"
         android:textColor="#41fdff" />
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitText"
+        android:layout_above="@+id/request"
+        android:layout_centerHorizontal="true"
+        android:height="100dp" />
+
 </RelativeLayout>

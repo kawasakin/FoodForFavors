@@ -21,7 +21,7 @@ public class FoodItem
         this.mName = mName;
     }
 
-    public double getQuantity() {
+    public int getQuantity() {
         return mQuantity;
     }
 

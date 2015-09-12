@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import imagedeck.FoodItem;
 import imagedeck.ImageDeck;
 
 
@@ -34,7 +35,7 @@ public class FavorFragment extends Fragment {
     protected ImageButton lb,rb;
     protected Button request;
     protected Image foodImage;
-    protected EditText editText;
+    protected EditText editText,submitText;
 
 
     // TODO: Rename and change types of parameters
@@ -85,14 +86,20 @@ public class FavorFragment extends Fragment {
         ImageButton rb = (ImageButton)mView.findViewById(R.id.rButton);
         Button request = (Button)mView.findViewById(R.id.request);
         final ImageView foodImage = (ImageView)mView.findViewById(R.id.foodImage);
-        EditText editText = (EditText)mView.findViewById(R.id.requestField);
+        final EditText editText = (EditText)mView.findViewById(R.id.requestField);
+        final EditText submitText = (EditText)mView.findViewById(R.id.submitText);
         final ImageDeck deck = new ImageDeck();
         foodImage.setImageDrawable(getResources().getDrawable(deck.getCurrent().getImageID()));
 
         lb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                foodImage.setImageDrawable(getResources().getDrawable(deck.moveLeft().getImageID()));
+                FoodItem item = deck.moveLeft();
+                foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
+                String text = "I need " + editText.getText().toString()
+                        + " and I am willing to offer " + item.getName()
+                        + "(" + item.getQuantity() + ").";
+                submitText.setText(text);
 
             }
         });
@@ -100,7 +107,12 @@ public class FavorFragment extends Fragment {
         rb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                foodImage.setImageDrawable(getResources().getDrawable(deck.moveRight().getImageID()));
+                FoodItem item = deck.moveRight();
+                foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
+                String text = "I need " + editText.getText().toString()
+                        + " and I am willing to offer " + item.getName()
+                        + "(" + item.getQuantity() + ").";
+                submitText.setText(text);
             }
         });
 
