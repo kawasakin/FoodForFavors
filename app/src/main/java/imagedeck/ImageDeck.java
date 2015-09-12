@@ -9,9 +9,9 @@ import com.example.ajindal1.foodforfavors.R;
  */
 public class ImageDeck
 {
-    private FoodItem[] menu = { new FoodItem(R.drawable.burrito_menu,"burrito",8.99),
-                                new FoodItem(R.drawable.beer_menu,"a few Beers",5.00),
-                                new FoodItem(R.drawable.chicken_menu,"some chicken wings",12.99)};
+    private FoodItem[] menu = { new FoodItem(R.drawable.burrito_menu,"burrito",1),
+                                new FoodItem(R.drawable.beer_menu,"a few Beers",3),
+                                new FoodItem(R.drawable.chicken_menu,"some chicken wings",10)};
 
     private int currentImage;
 

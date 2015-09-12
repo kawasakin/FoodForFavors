@@ -21,21 +21,21 @@ public class FoodItem
         this.mName = mName;
     }
 
-    public double getPrice() {
-        return mPrice;
+    public double getQuantity() {
+        return mQuantity;
     }
 
-    public void setPrice(double mPrice) {
-        this.mPrice = mPrice;
+    public void setPrice(int quantity) {
+        this.mQuantity = quantity;
     }
 
     int mImageID;
     String mName;
-    double mPrice;
+    int mQuantity;
 
-    public FoodItem(int imageID, String name, double price) {
+    public FoodItem(int imageID, String name, int quantity) {
         mImageID = imageID;
         mName = name;
-        mPrice = price;
+        mQuantity = quantity;
     }
 }
