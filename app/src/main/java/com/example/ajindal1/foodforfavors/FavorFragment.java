@@ -109,7 +109,7 @@ public class FavorFragment extends Fragment {
             public void onClick(View v) {
                 FoodItem item = deck.moveRight();
                 foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
-                String text = "I need " + editText.getText().toString()
+                String text = "I need someone to " + editText.getText().toString()
                         + " and I am willing to offer " + item.getName()
                         + "(" + item.getQuantity() + ").";
                 submitText.setText(text);

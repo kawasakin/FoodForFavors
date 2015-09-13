@@ -26,17 +26,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-        Log.e("HERE", "1");
         super.onCreate(savedInstanceState);
-        Log.e("HERE", "2");
 
         setContentView(R.layout.activity_login);
-        Log.e("HERE", "3");
 
         mUsername = (EditText)findViewById((R.id.usernameField));
         mPassword = (EditText)findViewById((R.id.passwordField));
         mLoginButton = (Button)findViewById(R.id.submitButton);
-        Log.e("HERE", "4");
 
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,10 +72,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-        Log.e("HERE", "5");
 
         mSignUpTextView = (Button)findViewById(R.id.signUpView);
-        Log.e("HERE", "6");
 
         mSignUpTextView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Log.e("HERE", "7");
 
     }
 

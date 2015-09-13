@@ -6,6 +6,16 @@
 
     <!-- TODO: Update blank fragment layout -->
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Describe the favor you need to be done."
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:gravity="center_horizontal" />
+
     <ImageView
         android:layout_width="175dp"
         android:layout_height="175dp"
@@ -18,12 +28,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/requestField"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:hint="Describe the favor you need"
-        android:height="150dp"
+        android:hint="Ex: &quot;mow my lawn&quot; &quot;walk the dog&quot; &quot;help me with statistics homework&quot;"
+        android:height="120dp"
         android:gravity="top"
-        android:background="#acd2ff" />
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#bddaff"
+        android:textSize="22sp" />
 
     <ImageButton
         style="?android:attr/buttonStyleSmall"
@@ -75,5 +87,15 @@
         android:layout_above="@+id/request"
         android:layout_centerHorizontal="true"
         android:height="100dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick a food, and edit the request below!"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/submitText"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:gravity="center_horizontal" />
 
 </RelativeLayout>
