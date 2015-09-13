@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/requestField"
         android:hint="Ex: &quot;mow my lawn&quot; &quot;walk the dog&quot; &quot;help me with statistics homework&quot;"
-        android:height="120dp"
+        android:height="80dp"
         android:gravity="top"
         android:layout_below="@+id/textView"
         android:layout_alignParentLeft="true"
