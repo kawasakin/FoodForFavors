@@ -13,6 +13,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
 import imagedeck.FoodItem;
 import imagedeck.ImageDeck;
 
@@ -113,6 +118,24 @@ public class FavorFragment extends Fragment {
                         + " and I am willing to offer " + item.getName()
                         + "(" + item.getQuantity() + ").";
                 submitText.setText(text);
+            }
+        });
+
+        request.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseObject newRequest = new ParseObject("Request");
+                newRequest.put("RequestText",submitText.getText());
+                newRequest.put("ImageId",deck.getCurrent().getImageID());
+                newRequest.put("username", ParseUser.getCurrentUser())
+                newRequest.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(ParseException e) {
+                        if (e == null){
+                            
+                        }
+                    }
+                });
             }
         });
 
