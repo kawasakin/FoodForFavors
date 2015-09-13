@@ -1,7 +1,6 @@
 package com.example.ajindal1.foodforfavors;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -91,7 +90,7 @@ public class FavorFragment extends Fragment {
         ImageButton lb = (ImageButton)mView.findViewById(R.id.lButton);
         ImageButton rb = (ImageButton)mView.findViewById(R.id.rButton);
         Button request = (Button)mView.findViewById(R.id.request);
-        final ImageView foodImage = (ImageView)mView.findViewById(R.id.foodImage);
+        final ImageView foodImage = (ImageView)mView.findViewById(R.id.requestImage);
         final EditText editText = (EditText)mView.findViewById(R.id.requestField);
         final EditText submitText = (EditText)mView.findViewById(R.id.submitText);
         final ImageDeck deck = new ImageDeck();

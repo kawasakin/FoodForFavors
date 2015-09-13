@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:id="@+id/requestImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/beer_menu" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[username]"
+        android:id="@+id/usernameTextView"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/requestImage"
+        android:layout_toEndOf="@+id/requestImage"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Message]"
+        android:id="@+id/messageTextview"
+        android:textSize="20dp"
+        android:layout_below="@+id/usernameTextView"
+        android:layout_toRightOf="@+id/requestImage"
+        android:layout_toEndOf="@+id/requestImage" />
+
+</RelativeLayout>

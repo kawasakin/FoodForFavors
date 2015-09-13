@@ -19,7 +19,7 @@
     <ImageView
         android:layout_width="175dp"
         android:layout_height="175dp"
-        android:id="@+id/foodImage"
+        android:id="@+id/requestImage"
         android:src="@drawable/burrito_menu"
         android:layout_below="@+id/requestField"
         android:layout_centerHorizontal="true" />
@@ -42,13 +42,13 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/rButton"
-        android:layout_toRightOf="@+id/foodImage"
+        android:layout_toRightOf="@+id/requestImage"
         android:src="@drawable/right_button"
         android:scaleType="fitCenter"
         android:layout_below="@+id/requestField"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/foodImage"
+        android:layout_alignBottom="@+id/requestImage"
         android:background="#00ffffff" />
 
     <ImageButton
@@ -59,8 +59,8 @@
         android:layout_alignBottom="@+id/rButton"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/foodImage"
-        android:layout_toStartOf="@+id/foodImage"
+        android:layout_toLeftOf="@+id/requestImage"
+        android:layout_toStartOf="@+id/requestImage"
         android:text="&lt;&lt;"
         android:layout_alignTop="@+id/rButton"
         android:background="#00ffffff"
