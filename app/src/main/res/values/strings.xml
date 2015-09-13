@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">FavorEats</string>
+    <string name="app_name">Food for Favors</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_login">Log in</string>
-    <string name="title_activity_sign_up">Sign Up</string>
+    <string name="title_activity_login">Log in to Food for Favors</string>
+    <string name="title_activity_sign_up">Sign Up for Food for Favors</string>
     <string name="title_activity_home">Home</string>
 
     <string name="title_section1">Section 1</string>

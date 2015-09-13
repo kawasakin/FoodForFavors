@@ -49,7 +49,7 @@ public class WelcomeActivity extends AppCompatActivity {
         }
         else {
             Log.i(TAG,currentUser.getUsername());
-            welcomeMessage.setText("Hello " + currentUser.getUsername() + "! Welcome to FavorEats!");
+            welcomeMessage.setText("Hello " + currentUser.getUsername() + "! Welcome to Food For Favors!");
         }
 
     }
