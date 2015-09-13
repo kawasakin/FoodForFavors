@@ -1,6 +1,7 @@
 package com.example.ajindal1.foodforfavors;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -125,14 +126,15 @@ public class FavorFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ParseObject newRequest = new ParseObject("Request");
-                newRequest.put("RequestText",submitText.getText());
+                newRequest.put("RequestText",submitText.getText().toString());
                 newRequest.put("ImageId",deck.getCurrent().getImageID());
-                newRequest.put("username", ParseUser.getCurrentUser())
+                newRequest.put("User", ParseUser.getCurrentUser());
                 newRequest.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
                         if (e == null){
-                            
+
+
                         }
                     }
                 });

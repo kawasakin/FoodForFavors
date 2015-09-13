@@ -40,6 +40,9 @@
         android:text="Submit"
         android:id="@+id/signUpSubmit"
         android:layout_below="@+id/signUpPassword"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="#8828cad6" />
+
+
 
 </RelativeLayout>
