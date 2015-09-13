@@ -20,7 +20,6 @@
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:id="@+id/requestImage"
-        android:src="@drawable/burrito_menu"
         android:layout_below="@+id/requestField"
         android:layout_centerHorizontal="true" />
 

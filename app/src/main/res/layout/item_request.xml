@@ -20,16 +20,26 @@
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/requestImage"
         android:layout_toEndOf="@+id/requestImage"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="[Message]"
         android:id="@+id/messageTextview"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_below="@+id/usernameTextView"
         android:layout_toRightOf="@+id/requestImage"
         android:layout_toEndOf="@+id/requestImage" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[Date]"
+        android:id="@+id/dateTextView"
+        android:layout_alignBottom="@+id/usernameTextView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textSize="20sp" />
 
 </RelativeLayout>

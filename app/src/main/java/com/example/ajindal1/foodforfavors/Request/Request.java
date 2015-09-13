@@ -2,6 +2,8 @@ package com.example.ajindal1.foodforfavors.Request;
 
 import com.parse.ParseUser;
 
+import java.util.Date;
+
 /**
  * Created by ajindal1 on 9/12/15.
  */
@@ -43,10 +45,21 @@ public class Request
     String mUsername,mMessage;
     int mimageId;
 
-    public Request(ParseUser parseUser, String username, String message, int imageId) {
+    public Date getDate() {
+        return mDate;
+    }
+
+    public void setDate(Date mDate) {
+        this.mDate = mDate;
+    }
+
+    Date mDate;
+
+    public Request(ParseUser parseUser, String username, String message, int imageId , Date date) {
         mParseUser = parseUser;
         mUsername = username;
         mMessage = message;
         mimageId = imageId;
+        mDate = date;
     }
 }

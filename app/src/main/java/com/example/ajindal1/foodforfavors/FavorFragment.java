@@ -6,6 +6,7 @@ import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +14,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+
+import org.w3c.dom.Text;
 
 import imagedeck.FoodItem;
 import imagedeck.ImageDeck;
@@ -88,14 +93,56 @@ public class FavorFragment extends Fragment {
         mView =  inflater.inflate(R.layout.fragment_favor, container, false);
 
         // Inflate the layout for this fragment
-        ImageButton lb = (ImageButton)mView.findViewById(R.id.lButton);
-        ImageButton rb = (ImageButton)mView.findViewById(R.id.rButton);
-        Button request = (Button)mView.findViewById(R.id.request);
+        final ImageButton lb = (ImageButton)mView.findViewById(R.id.lButton);
+        final ImageButton rb = (ImageButton)mView.findViewById(R.id.rButton);
+        final Button request = (Button)mView.findViewById(R.id.request);
         final ImageView foodImage = (ImageView)mView.findViewById(R.id.requestImage);
         final EditText editText = (EditText)mView.findViewById(R.id.requestField);
         final EditText submitText = (EditText)mView.findViewById(R.id.submitText);
+        final TextView textview2 = (TextView)mView.findViewById(R.id.textView2);
         final ImageDeck deck = new ImageDeck();
+
         foodImage.setImageDrawable(getResources().getDrawable(deck.getCurrent().getImageID()));
+
+
+        foodImage.setVisibility(View.INVISIBLE);
+        submitText.setVisibility(View.INVISIBLE);
+        request.setVisibility(View.INVISIBLE);
+        lb.setVisibility(View.INVISIBLE);
+        rb.setVisibility(View.INVISIBLE);
+        textview2.setVisibility(View.INVISIBLE);
+
+
+
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
+                    //Toast.makeText(getContext(), editText.getText(), Toast.LENGTH_SHORT).show();
+                    foodImage.setVisibility(View.VISIBLE);
+                    submitText.setVisibility(View.VISIBLE);
+                    request.setVisibility(View.VISIBLE);
+                    lb.setVisibility(View.VISIBLE);
+                    rb.setVisibility(View.VISIBLE);
+                    textview2.setVisibility(View.VISIBLE);
+
+                    FoodItem item = deck.getCurrent();
+                    foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
+                    String text = "I need " + editText.getText().toString()
+                            + " and I am willing to offer " + item.getName()
+                            + "(" + item.getQuantity() + ").";
+                    submitText.setText(text);
+
+                    return true;
+                }
+                return false;
+            }
+
+        });
 
         lb.setOnClickListener(new View.OnClickListener() {
             @Override

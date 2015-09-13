@@ -70,7 +70,7 @@ public class RequestFragment extends Fragment {
                     ParseUser user = (ParseUser) o.get("User");
                     String username = (String) user.get("username");
                     String message = (String) o.get("RequestText");
-                    Date date =  o.getDate("createdAt")
+                    Date date =  o.getCreatedAt();
                     int imageId = o.getInt("ImageId");
                     adapter.add(new Request(user, username, message, imageId,date));
                 }
