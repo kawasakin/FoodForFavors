@@ -21,6 +21,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,6 +49,7 @@ public class RequestFragment extends Fragment {
     public void onResume() {
         super.onResume();
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Request");
+        query.orderByDescending("createdAt");
         query.setLimit(100);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -68,8 +70,9 @@ public class RequestFragment extends Fragment {
                     ParseUser user = (ParseUser) o.get("User");
                     String username = (String) user.get("username");
                     String message = (String) o.get("RequestText");
+                    Date date =  o.getDate("createdAt")
                     int imageId = o.getInt("ImageId");
-                    adapter.add(new Request(user, username, message, imageId));
+                    adapter.add(new Request(user, username, message, imageId,date));
                 }
 
 

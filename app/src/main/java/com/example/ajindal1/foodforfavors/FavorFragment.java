@@ -1,6 +1,7 @@
 package com.example.ajindal1.foodforfavors;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -131,12 +132,17 @@ public class FavorFragment extends Fragment {
                 newRequest.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(ParseException e) {
-                        if (e == null){
+                        if (e == null) {
 
 
                         }
                     }
                 });
+
+                Intent intent = new Intent(getContext(), HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         });
 
