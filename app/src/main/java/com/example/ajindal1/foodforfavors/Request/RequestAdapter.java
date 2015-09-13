@@ -41,8 +41,21 @@ public class RequestAdapter extends ArrayAdapter<Request>
 
         Date date = request.getDate();
         if(date != null) {
-            String dateText = date.toString();
-            dateView.setText(dateText);
+            Date now = new Date();
+            long seconds = (now.getTime() - date.getTime())/1000;
+            long minutes = seconds/60;
+            long hours = minutes/60;
+            long days = hours/24;
+            if(days != 0)
+                dateView.setText("" + days + " day(s) ago");
+            else if (hours != 0)
+                dateView.setText("" + hours + " hour(s) ago");
+            else if (minutes != 0)
+                dateView.setText("" + minutes + " minute(s) ago");
+            else if (seconds >= 30)
+                dateView.setText("" + seconds + " second(s) ago");
+            else
+                dateView.setText("Just now");
         }
         image.setImageDrawable(convertView.getResources().getDrawable(request.getImageId()));
         messageTextView.setText(request.getMessage());

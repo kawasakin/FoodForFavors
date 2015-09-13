@@ -56,8 +56,6 @@ public class WelcomeActivity extends AppCompatActivity {
 
     private void goToLoginMenu() {
         Intent intent = new Intent(this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 

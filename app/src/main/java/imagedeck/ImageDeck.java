@@ -13,7 +13,9 @@ public class ImageDeck
                                 new FoodItem(R.drawable.beer_menu,"a few Beers",3),
                                 new FoodItem(R.drawable.chicken_menu,"some chicken wings",10),
                                 new FoodItem(R.drawable.pizza_menu, "slices of pizza", 3),
-                                new FoodItem(R.drawable.sushi_menu, "rolls of sushi", 2)};
+                                new FoodItem(R.drawable.sushi_menu, "rolls of sushi", 2),
+                                new FoodItem(R.drawable.burger_menu,"a burger and fries",1),
+                                new FoodItem(R.drawable.other_menu,"[Enter your own]",0)};
 
     private int currentImage;
 
