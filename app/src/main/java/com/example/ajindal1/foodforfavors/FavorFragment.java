@@ -121,35 +121,51 @@ public class FavorFragment extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
 
-            if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
 
 
-                // Perform action on key press
-                //Toast.makeText(getContext(), editText.getText(), Toast.LENGTH_SHORT).show();
-                foodImage.setVisibility(View.VISIBLE);
-                submitText.setVisibility(View.VISIBLE);
-                request.setVisibility(View.VISIBLE);
-                lb.setVisibility(View.VISIBLE);
-                rb.setVisibility(View.VISIBLE);
-                textview2.setVisibility(View.VISIBLE);
+                    // Perform action on key press
+                    //Toast.makeText(getContext(), editText.getText(), Toast.LENGTH_SHORT).show();
+                    foodImage.setVisibility(View.VISIBLE);
+                    submitText.setVisibility(View.VISIBLE);
+                    request.setVisibility(View.VISIBLE);
+                    lb.setVisibility(View.VISIBLE);
+                    rb.setVisibility(View.VISIBLE);
+                    textview2.setVisibility(View.VISIBLE);
 
-                FoodItem item = deck.getCurrent();
-                foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
-                String text = "I need " + editText.getText().toString()
-                        + " and I am willing to offer " + item.getName()
-                        + "(" + item.getQuantity() + ").";
-                submitText.setText(text);
+                    FoodItem item = deck.getCurrent();
+                    foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
+                    String text = "I need " + editText.getText().toString()
+                            + " and I am willing to offer " + item.getName()
+                            + "(" + item.getQuantity() + ").";
+                    submitText.setText(text);
 
-                InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
 
 
-                return true;
+                    return true;
+                }
+                return false;
             }
-            return false;
-            }
 
+        });
+
+
+
+        submitText.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(submitText.getWindowToken(), 0);
+
+                    return true;
+                }
+                return false;
+            }
         });
 
         lb.setOnClickListener(new View.OnClickListener() {

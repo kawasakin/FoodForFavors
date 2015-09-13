@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ajindal1.foodforfavors.connect"
+    android:background="@drawable/bckg_home2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/requestorView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/messageView"
+        android:layout_below="@+id/requestorView"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"
+        android:gravity="center" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Accept Task"
+        android:id="@+id/acceptButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:background="#8878ff70"
+        android:gravity="center"
+        android:height="100dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Counteroffer"
+        android:id="@+id/counterButton"
+        android:textSize="40dp"
+        android:background="#88ff706a"
+        android:gravity="center"
+        android:height="100dp"
+        android:layout_above="@+id/acceptButton"
+        android:layout_alignLeft="@+id/acceptButton"
+        android:layout_alignStart="@+id/acceptButton" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/counterText"
+        android:layout_above="@+id/counterButton"
+        android:layout_centerHorizontal="true"
+        android:hint="Enter a counteroffer if any"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:gravity="center_horizontal" />
+</RelativeLayout>

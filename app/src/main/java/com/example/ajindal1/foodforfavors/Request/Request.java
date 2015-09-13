@@ -1,12 +1,16 @@
 package com.example.ajindal1.foodforfavors.Request;
 
+import android.os.Parcelable;
+
 import com.parse.ParseUser;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by ajindal1 on 9/12/15.
  */
+@SuppressWarnings("serial")
 public class Request
 {
     public ParseUser getParseUser() {
