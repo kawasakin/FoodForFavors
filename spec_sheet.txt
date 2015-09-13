@@ -1,4 +1,4 @@
-FAVOREATS SPEC SHEET
+FOOD FOR FAVORS SPEC SHEET
 
 Bare-Bones App:
 1.	Person posts a favor needed (ie. Homework help, fix my iphone screen, mow my lawn, etc) in exchange for food
