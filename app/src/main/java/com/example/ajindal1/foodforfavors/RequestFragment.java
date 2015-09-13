@@ -4,6 +4,7 @@ package com.example.ajindal1.foodforfavors;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,12 +68,20 @@ public class RequestFragment extends Fragment {
 
 
                 for (ParseObject o : list) {
+
                     ParseUser user = (ParseUser) o.get("User");
-                    String username = (String) user.get("username");
+                    Log.e("RequestFragment",user.getObjectId());
+                    try {
+                        user.fetchIfNeeded();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                    String username =  user.getUsername();
                     String message = (String) o.get("RequestText");
-                    Date date =  o.getCreatedAt();
+                    Date date = o.getCreatedAt();
                     int imageId = o.getInt("ImageId");
-                    adapter.add(new Request(user, username, message, imageId,date));
+                    adapter.add(new Request(user, username, message, imageId, date));
+
                 }
 
 

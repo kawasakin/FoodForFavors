@@ -1,6 +1,7 @@
 package com.example.ajindal1.foodforfavors;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.net.Uri;
@@ -10,6 +11,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -119,27 +121,33 @@ public class FavorFragment extends Fragment {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
 
 
-                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
-                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                    // Perform action on key press
-                    //Toast.makeText(getContext(), editText.getText(), Toast.LENGTH_SHORT).show();
-                    foodImage.setVisibility(View.VISIBLE);
-                    submitText.setVisibility(View.VISIBLE);
-                    request.setVisibility(View.VISIBLE);
-                    lb.setVisibility(View.VISIBLE);
-                    rb.setVisibility(View.VISIBLE);
-                    textview2.setVisibility(View.VISIBLE);
+            if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                    (keyCode == KeyEvent.KEYCODE_ENTER)) {
 
-                    FoodItem item = deck.getCurrent();
-                    foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
-                    String text = "I need " + editText.getText().toString()
-                            + " and I am willing to offer " + item.getName()
-                            + "(" + item.getQuantity() + ").";
-                    submitText.setText(text);
 
-                    return true;
-                }
-                return false;
+                // Perform action on key press
+                //Toast.makeText(getContext(), editText.getText(), Toast.LENGTH_SHORT).show();
+                foodImage.setVisibility(View.VISIBLE);
+                submitText.setVisibility(View.VISIBLE);
+                request.setVisibility(View.VISIBLE);
+                lb.setVisibility(View.VISIBLE);
+                rb.setVisibility(View.VISIBLE);
+                textview2.setVisibility(View.VISIBLE);
+
+                FoodItem item = deck.getCurrent();
+                foodImage.setImageDrawable(getResources().getDrawable(item.getImageID()));
+                String text = "I need " + editText.getText().toString()
+                        + " and I am willing to offer " + item.getName()
+                        + "(" + item.getQuantity() + ").";
+                submitText.setText(text);
+
+                InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
+
+
+                return true;
+            }
+            return false;
             }
 
         });

@@ -14,7 +14,7 @@
         android:id="@+id/logoutButton"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#28cad6" />
+        android:background="#8828cad6" />
 
     <TextView android:text="&quot;Hello [username]! Welcome to Food For Favors!&quot;" android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="Continue"
         android:id="@+id/continueButton"
-        android:background="#28cad6"
+        android:background="#8828cad6"
         android:layout_above="@+id/logoutButton"
         android:layout_marginBottom="20dp"
         android:layout_alignParentRight="true"
